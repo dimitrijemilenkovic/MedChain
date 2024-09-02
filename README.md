@@ -1,2 +1,9 @@
-MedChain je aplikacija koja se koristi kako bi se obezbedila sigurnost u medicinskom sistemu
-pisanja kartona pacijenata.
+PZ | CS230-Distribuirani sistemi |
+Dimitrije Milenković 5796 SI
+
+
+
+
+
+Projektni zadatak na predmetu CS230 baziran na blockchainu i čuvanjem podataka o pacijentima na istom.
+
