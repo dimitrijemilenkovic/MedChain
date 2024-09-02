@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Add Patient Data</title>
+</head>
+<body>
+<div class="container">
+    <h1>Add Patient Data</h1>
+    <form action="/add_patient_data" method="post">
+        <label for="patient_id">Patient ID:</label>
+        <input type="text" id="patient_id" name="patient_id" required>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="diagnosis">Diagnosis:</label>
+        <input type="text" id="diagnosis" name="diagnosis" required>
+
+        <label for="treatment">Treatment:</label>
+        <input type="text" id="treatment" name="treatment" required>
+
+        <button type="submit">Submit</button>
+    </form>
+    <form action="/search_patient" method="get">
+        <label for="patient_id">Enter Patient ID:</label>
+        <input type="text" id="patient_id" name="patient_id" required>
+        <button type="submit">Search</button>
+    </form>
+    <a href="/get_chain">View All Patient Data</a>
+    <form action="javascript:history.back()" method="post">
+    <button type="submit">Back</button>
+</form>
+</div>
+</body>
+</html>

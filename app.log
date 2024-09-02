@@ -1,0 +1,1336 @@
+2024-09-02 22:05:06,944 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5080
+ * Running on http://192.168.0.30:5080
+2024-09-02 22:05:06,944 INFO [33mPress CTRL+C to quit[0m
+2024-09-02 22:05:06,945 INFO  * Restarting with stat
+2024-09-02 22:05:07,061 WARNING  * Debugger is active!
+2024-09-02 22:05:07,066 INFO  * Debugger PIN: 485-096-234
+2024-09-02 22:05:14,401 INFO Request: GET http://localhost:5080/ b''
+2024-09-02 22:05:14,410 INFO Response: 200 OK <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Add Patient Data</title>
+</head>
+<body>
+<div class="container">
+    <h1>Add Patient Data</h1>
+    <form action="/add_patient_data" method="post">
+        <label for="patient_id">Patient ID:</label>
+        <input type="text" id="patient_id" name="patient_id" required>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="diagnosis">Diagnosis:</label>
+        <input type="text" id="diagnosis" name="diagnosis" required>
+
+        <label for="treatment">Treatment:</label>
+        <input type="text" id="treatment" name="treatment" required>
+
+        <button type="submit">Submit</button>
+    </form>
+    <form action="/search_patient" method="get">
+        <label for="patient_id">Enter Patient ID:</label>
+        <input type="text" id="patient_id" name="patient_id" required>
+        <button type="submit">Search</button>
+    </form>
+    <a href="/get_chain">View All Patient Data</a>
+</div>
+</body>
+</html>
+2024-09-02 22:05:14,411 INFO 127.0.0.1 - - [02/Sep/2024 22:05:14] "GET / HTTP/1.1" 200 -
+2024-09-02 22:05:14,449 INFO 127.0.0.1 - - [02/Sep/2024 22:05:14] "GET /static/css/style.css HTTP/1.1" 200 -
+2024-09-02 22:05:17,531 INFO Request: GET http://localhost:5080/get_chain b''
+2024-09-02 22:05:17,537 INFO Response: 200 OK <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Chain</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+        button {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            background-color: #007bff;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        form {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Blockchain Chain</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>Previous Hash</th>
+                <th>Timestamp</th>
+                <th>Data</th>
+                <th>Hash</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+</body>
+</html>
+2024-09-02 22:05:17,537 INFO 127.0.0.1 - - [02/Sep/2024 22:05:17] "GET /get_chain HTTP/1.1" 200 -
+2024-09-02 22:05:26,923 INFO Request: POST http://localhost:5080/add_patient_data b''
+2024-09-02 22:05:26,923 INFO Response: 200 OK {
+  "message": "Data added to blockchain"
+}
+
+2024-09-02 22:05:26,923 INFO 127.0.0.1 - - [02/Sep/2024 22:05:26] "POST /add_patient_data HTTP/1.1" 200 -
+2024-09-02 22:05:31,077 INFO Request: GET http://localhost:5080/get_chain b''
+2024-09-02 22:05:31,077 INFO Response: 200 OK <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Chain</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+        button {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            background-color: #007bff;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        form {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Blockchain Chain</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>Previous Hash</th>
+                <th>Timestamp</th>
+                <th>Data</th>
+                <th>Hash</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>1</td>
+                    <td>466f30765df440eb3ceab3c91130e5f79a0918b2af6e0871b4449088d9908756</td>
+                    <td>1725307526.923209</td>
+                    <td>{&#39;patient_id&#39;: &#39;0001&#39;, &#39;name&#39;: &#39;Dimitrije&#39;, &#39;diagnosis&#39;: &#39;Debil&#39;, &#39;treatment&#39;: &#39;Nema leka&#39;}</td>
+                    <td>618d4a744b2347593d8ec73c993a0bd8cf61a9f4295159af4c776dcc54e204a3</td>
+                    <td>
+                        <form action="/delete_block/1" method="post">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            
+        </tbody>
+    </table>
+</body>
+</html>
+2024-09-02 22:05:31,077 INFO 127.0.0.1 - - [02/Sep/2024 22:05:31] "GET /get_chain HTTP/1.1" 200 -
+2024-09-02 22:08:32,348 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5080
+ * Running on http://192.168.0.30:5080
+2024-09-02 22:08:32,348 INFO [33mPress CTRL+C to quit[0m
+2024-09-02 22:08:32,349 INFO  * Restarting with stat
+2024-09-02 22:08:32,452 WARNING  * Debugger is active!
+2024-09-02 22:08:32,459 INFO  * Debugger PIN: 485-096-234
+2024-09-02 22:21:39,635 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5080
+ * Running on http://192.168.0.30:5080
+2024-09-02 22:21:39,635 INFO [33mPress CTRL+C to quit[0m
+2024-09-02 22:21:39,636 INFO  * Restarting with stat
+2024-09-02 22:21:39,742 WARNING  * Debugger is active!
+2024-09-02 22:21:39,749 INFO  * Debugger PIN: 485-096-234
+2024-09-02 22:21:56,259 INFO Request: GET http://localhost:5080/ b''
+2024-09-02 22:21:56,264 INFO Response: 200 OK <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Add Patient Data</title>
+</head>
+<body>
+<div class="container">
+    <h1>Add Patient Data</h1>
+    <form action="/add_patient_data" method="post">
+        <label for="patient_id">Patient ID:</label>
+        <input type="text" id="patient_id" name="patient_id" required>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="diagnosis">Diagnosis:</label>
+        <input type="text" id="diagnosis" name="diagnosis" required>
+
+        <label for="treatment">Treatment:</label>
+        <input type="text" id="treatment" name="treatment" required>
+
+        <button type="submit">Submit</button>
+    </form>
+    <form action="/search_patient" method="get">
+        <label for="patient_id">Enter Patient ID:</label>
+        <input type="text" id="patient_id" name="patient_id" required>
+        <button type="submit">Search</button>
+    </form>
+    <a href="/get_chain">View All Patient Data</a>
+    <form action="javascript:history.back()" method="post">
+    <button type="submit">Back</button>
+</form>
+</div>
+</body>
+</html>
+2024-09-02 22:21:56,265 INFO 127.0.0.1 - - [02/Sep/2024 22:21:56] "GET / HTTP/1.1" 200 -
+2024-09-02 22:21:56,303 INFO 127.0.0.1 - - [02/Sep/2024 22:21:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-09-02 22:22:01,269 INFO Request: GET http://localhost:5080/get_chain b''
+2024-09-02 22:22:01,275 INFO Response: 200 OK <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Chain</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        button {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            background-color: #007bff;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        form {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<h1>Blockchain Chain</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Index</th>
+        <th>Previous Hash</th>
+        <th>Timestamp</th>
+        <th>Data</th>
+        <th>Hash</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+    </tbody>
+</table>
+<form action="javascript:history.back()" method="post">
+    <button type="submit">Back</button>
+</form>
+</body>
+</html>
+2024-09-02 22:22:01,275 INFO 127.0.0.1 - - [02/Sep/2024 22:22:01] "GET /get_chain HTTP/1.1" 200 -
+2024-09-02 22:24:19,480 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5080
+ * Running on http://192.168.0.30:5080
+2024-09-02 22:24:19,481 INFO [33mPress CTRL+C to quit[0m
+2024-09-02 22:24:19,484 INFO  * Restarting with stat
+2024-09-02 22:24:19,822 WARNING  * Debugger is active!
+2024-09-02 22:24:19,828 INFO  * Debugger PIN: 485-096-234
+2024-09-02 22:24:22,752 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5080
+ * Running on http://192.168.0.30:5080
+2024-09-02 22:24:22,752 INFO [33mPress CTRL+C to quit[0m
+2024-09-02 22:24:22,753 INFO  * Restarting with stat
+2024-09-02 22:24:22,867 WARNING  * Debugger is active!
+2024-09-02 22:24:22,872 INFO  * Debugger PIN: 485-096-234
+2024-09-02 22:24:25,166 INFO Request: GET http://localhost:5080/ b''
+2024-09-02 22:24:25,171 INFO Response: 200 OK <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Add Patient Data</title>
+</head>
+<body>
+<div class="container">
+    <h1>Add Patient Data</h1>
+    <form action="/add_patient_data" method="post">
+        <label for="patient_id">Patient ID:</label>
+        <input type="text" id="patient_id" name="patient_id" required>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="diagnosis">Diagnosis:</label>
+        <input type="text" id="diagnosis" name="diagnosis" required>
+
+        <label for="treatment">Treatment:</label>
+        <input type="text" id="treatment" name="treatment" required>
+
+        <button type="submit">Submit</button>
+    </form>
+    <form action="/search_patient" method="get">
+        <label for="patient_id">Enter Patient ID:</label>
+        <input type="text" id="patient_id" name="patient_id" required>
+        <button type="submit">Search</button>
+    </form>
+    <a href="/get_chain">View All Patient Data</a>
+    <form action="javascript:history.back()" method="post">
+    <button type="submit">Back</button>
+</form>
+</div>
+</body>
+</html>
+2024-09-02 22:24:25,171 INFO 127.0.0.1 - - [02/Sep/2024 22:24:25] "GET / HTTP/1.1" 200 -
+2024-09-02 22:24:25,214 INFO 127.0.0.1 - - [02/Sep/2024 22:24:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-09-02 22:24:30,177 INFO Request: GET http://localhost:5080/search_patient?patient_id=0001 b''
+2024-09-02 22:24:30,197 INFO 127.0.0.1 - - [02/Sep/2024 22:24:30] "[35m[1mGET /search_patient?patient_id=0001 HTTP/1.1[0m" 500 -
+2024-09-02 22:24:30,231 INFO 127.0.0.1 - - [02/Sep/2024 22:24:30] "GET /search_patient?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-09-02 22:24:30,232 INFO 127.0.0.1 - - [02/Sep/2024 22:24:30] "GET /search_patient?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-09-02 22:24:30,251 INFO 127.0.0.1 - - [02/Sep/2024 22:24:30] "GET /search_patient?__debugger__=yes&cmd=resource&f=console.png&s=I7bFaoEvD4VldOqnXDEx HTTP/1.1" 200 -
+2024-09-02 22:24:30,253 INFO 127.0.0.1 - - [02/Sep/2024 22:24:30] "GET /search_patient?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-09-02 22:24:30,260 INFO 127.0.0.1 - - [02/Sep/2024 22:24:30] "[36mGET /search_patient?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2024-09-02 22:25:20,397 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5080
+ * Running on http://192.168.0.30:5080
+2024-09-02 22:25:20,397 INFO [33mPress CTRL+C to quit[0m
+2024-09-02 22:25:20,398 INFO  * Restarting with stat
+2024-09-02 22:25:20,504 WARNING  * Debugger is active!
+2024-09-02 22:25:20,509 INFO  * Debugger PIN: 485-096-234
+2024-09-02 22:25:22,927 INFO Request: GET http://localhost:5080/ b''
+2024-09-02 22:25:22,929 INFO Response: 200 OK <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Add Patient Data</title>
+</head>
+<body>
+<div class="container">
+    <h1>Add Patient Data</h1>
+    <form action="/add_patient_data" method="post">
+        <label for="patient_id">Patient ID:</label>
+        <input type="text" id="patient_id" name="patient_id" required>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="diagnosis">Diagnosis:</label>
+        <input type="text" id="diagnosis" name="diagnosis" required>
+
+        <label for="treatment">Treatment:</label>
+        <input type="text" id="treatment" name="treatment" required>
+
+        <button type="submit">Submit</button>
+    </form>
+    <form action="/search_patient" method="get">
+        <label for="patient_id">Enter Patient ID:</label>
+        <input type="text" id="patient_id" name="patient_id" required>
+        <button type="submit">Search</button>
+    </form>
+    <a href="/get_chain">View All Patient Data</a>
+    <form action="javascript:history.back()" method="post">
+    <button type="submit">Back</button>
+</form>
+</div>
+</body>
+</html>
+2024-09-02 22:25:22,929 INFO 127.0.0.1 - - [02/Sep/2024 22:25:22] "GET / HTTP/1.1" 200 -
+2024-09-02 22:25:22,945 INFO 127.0.0.1 - - [02/Sep/2024 22:25:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-09-02 22:25:28,309 INFO Request: POST http://localhost:5080/add_patient_data b''
+2024-09-02 22:25:28,309 INFO Response: 200 OK {
+  "message": "Data added to blockchain"
+}
+
+2024-09-02 22:25:28,309 INFO 127.0.0.1 - - [02/Sep/2024 22:25:28] "POST /add_patient_data HTTP/1.1" 200 -
+2024-09-02 22:25:31,852 INFO Request: GET http://localhost:5080/get_chain b''
+2024-09-02 22:25:31,856 INFO Response: 200 OK <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Chain</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        button {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            background-color: #007bff;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        form {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<h1>Blockchain Chain</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Index</th>
+        <th>Previous Hash</th>
+        <th>Timestamp</th>
+        <th>Data</th>
+        <th>Hash</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+    <tr>
+        <td>1</td>
+        <td>3f7cda0012139c5c277d9edbf61c46954dc53280c850beb9434d4668122c6b16</td>
+        <td>1725308728.3094158</td>
+        <td>{&#39;patient_id&#39;: &#39;0001&#39;, &#39;name&#39;: &#39;312&#39;, &#39;diagnosis&#39;: &#39;31&#39;, &#39;treatment&#39;: &#39;312&#39;}</td>
+        <td>db93b3eff4be4157ab5ccd1081f8b6b38c1969a596bce7f196bbf200ed473285</td>
+        <td>
+            <form action="/delete_block/1" method="post">
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+    
+    </tbody>
+</table>
+<form action="javascript:history.back()" method="post">
+    <button type="submit">Back</button>
+</form>
+</body>
+</html>
+2024-09-02 22:25:31,856 INFO 127.0.0.1 - - [02/Sep/2024 22:25:31] "GET /get_chain HTTP/1.1" 200 -
+2024-09-02 22:25:37,072 INFO Request: GET http://localhost:5080/search_patient?patient_id=0001 b''
+2024-09-02 22:25:37,088 INFO 127.0.0.1 - - [02/Sep/2024 22:25:37] "[35m[1mGET /search_patient?patient_id=0001 HTTP/1.1[0m" 500 -
+2024-09-02 22:25:37,119 INFO 127.0.0.1 - - [02/Sep/2024 22:25:37] "[36mGET /search_patient?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-09-02 22:25:37,123 INFO 127.0.0.1 - - [02/Sep/2024 22:25:37] "[36mGET /search_patient?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-09-02 22:25:37,134 INFO 127.0.0.1 - - [02/Sep/2024 22:25:37] "GET /search_patient?__debugger__=yes&cmd=resource&f=console.png&s=6RABaJ58rkwU1c153kZM HTTP/1.1" 200 -
+2024-09-02 22:25:37,136 INFO 127.0.0.1 - - [02/Sep/2024 22:25:37] "[36mGET /search_patient?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2024-09-02 22:26:15,842 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5080
+ * Running on http://192.168.0.30:5080
+2024-09-02 22:26:15,843 INFO [33mPress CTRL+C to quit[0m
+2024-09-02 22:26:15,843 INFO  * Restarting with stat
+2024-09-02 22:26:15,948 WARNING  * Debugger is active!
+2024-09-02 22:26:15,957 INFO  * Debugger PIN: 485-096-234
+2024-09-02 22:26:20,638 INFO Request: GET http://localhost:5080/ b''
+2024-09-02 22:26:20,645 INFO Response: 200 OK <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Add Patient Data</title>
+</head>
+<body>
+<div class="container">
+    <h1>Add Patient Data</h1>
+    <form action="/add_patient_data" method="post">
+        <label for="patient_id">Patient ID:</label>
+        <input type="text" id="patient_id" name="patient_id" required>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="diagnosis">Diagnosis:</label>
+        <input type="text" id="diagnosis" name="diagnosis" required>
+
+        <label for="treatment">Treatment:</label>
+        <input type="text" id="treatment" name="treatment" required>
+
+        <button type="submit">Submit</button>
+    </form>
+    <form action="/search_patient" method="get">
+        <label for="patient_id">Enter Patient ID:</label>
+        <input type="text" id="patient_id" name="patient_id" required>
+        <button type="submit">Search</button>
+    </form>
+    <a href="/get_chain">View All Patient Data</a>
+    <form action="javascript:history.back()" method="post">
+    <button type="submit">Back</button>
+</form>
+</div>
+</body>
+</html>
+2024-09-02 22:26:20,646 INFO 127.0.0.1 - - [02/Sep/2024 22:26:20] "GET / HTTP/1.1" 200 -
+2024-09-02 22:26:20,670 INFO 127.0.0.1 - - [02/Sep/2024 22:26:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-09-02 22:26:24,601 INFO Request: GET http://localhost:5080/search_patient?patient_id=0001 b''
+2024-09-02 22:26:24,606 INFO Response: 200 OK <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        button {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            background-color: #007bff;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<h1>Patient Data for ID</h1>
+
+<p>No data found for the provided patient ID.</p>
+
+<form action="javascript:history.back()" method="post">
+    <button type="submit">Back</button>
+</form>
+</body>
+</html>
+2024-09-02 22:26:24,606 INFO 127.0.0.1 - - [02/Sep/2024 22:26:24] "GET /search_patient?patient_id=0001 HTTP/1.1" 200 -
+2024-09-02 22:29:06,903 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5080
+ * Running on http://192.168.0.30:5080
+2024-09-02 22:29:06,905 INFO [33mPress CTRL+C to quit[0m
+2024-09-02 22:29:06,905 INFO  * Restarting with stat
+2024-09-02 22:29:07,004 WARNING  * Debugger is active!
+2024-09-02 22:29:07,011 INFO  * Debugger PIN: 485-096-234
+2024-09-02 22:29:10,060 INFO Request: GET http://localhost:5080/ b''
+2024-09-02 22:29:10,065 INFO Response: 200 OK <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Add Patient Data</title>
+</head>
+<body>
+<div class="container">
+    <h1>Add Patient Data</h1>
+    <form action="/add_patient_data" method="post">
+        <label for="patient_id">Patient ID:</label>
+        <input type="text" id="patient_id" name="patient_id" required>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="diagnosis">Diagnosis:</label>
+        <input type="text" id="diagnosis" name="diagnosis" required>
+
+        <label for="treatment">Treatment:</label>
+        <input type="text" id="treatment" name="treatment" required>
+
+        <button type="submit">Submit</button>
+    </form>
+    <form action="/search_patient" method="get">
+        <label for="patient_id">Enter Patient ID:</label>
+        <input type="text" id="patient_id" name="patient_id" required>
+        <button type="submit">Search</button>
+    </form>
+    <a href="/get_chain">View All Patient Data</a>
+    <form action="javascript:history.back()" method="post">
+    <button type="submit">Back</button>
+</form>
+</div>
+</body>
+</html>
+2024-09-02 22:29:10,065 INFO 127.0.0.1 - - [02/Sep/2024 22:29:10] "GET / HTTP/1.1" 200 -
+2024-09-02 22:29:10,090 INFO 127.0.0.1 - - [02/Sep/2024 22:29:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-09-02 22:29:11,819 INFO Request: GET http://localhost:5080/ b''
+2024-09-02 22:29:11,820 INFO Response: 200 OK <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Add Patient Data</title>
+</head>
+<body>
+<div class="container">
+    <h1>Add Patient Data</h1>
+    <form action="/add_patient_data" method="post">
+        <label for="patient_id">Patient ID:</label>
+        <input type="text" id="patient_id" name="patient_id" required>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="diagnosis">Diagnosis:</label>
+        <input type="text" id="diagnosis" name="diagnosis" required>
+
+        <label for="treatment">Treatment:</label>
+        <input type="text" id="treatment" name="treatment" required>
+
+        <button type="submit">Submit</button>
+    </form>
+    <form action="/search_patient" method="get">
+        <label for="patient_id">Enter Patient ID:</label>
+        <input type="text" id="patient_id" name="patient_id" required>
+        <button type="submit">Search</button>
+    </form>
+    <a href="/get_chain">View All Patient Data</a>
+    <form action="javascript:history.back()" method="post">
+    <button type="submit">Back</button>
+</form>
+</div>
+</body>
+</html>
+2024-09-02 22:29:11,820 INFO 127.0.0.1 - - [02/Sep/2024 22:29:11] "GET / HTTP/1.1" 200 -
+2024-09-02 22:29:11,829 INFO 127.0.0.1 - - [02/Sep/2024 22:29:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-09-02 22:29:20,165 INFO Request: POST http://localhost:5080/add_patient_data b''
+2024-09-02 22:29:20,166 INFO Response: 200 OK {
+  "message": "Data added to blockchain"
+}
+
+2024-09-02 22:29:20,167 INFO 127.0.0.1 - - [02/Sep/2024 22:29:20] "POST /add_patient_data HTTP/1.1" 200 -
+2024-09-02 22:29:26,986 INFO Request: GET http://localhost:5080/search_patient?patient_id=0001 b''
+2024-09-02 22:29:26,992 INFO Response: 200 OK <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        button {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            background-color: #007bff;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .back-button {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>Patient Data</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Patient ID</th>
+        <th>Name</th>
+        <th>Disease</th>
+        <th>Treatment</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+    <tr>
+        <td></td>
+        <td>Dimitrije</td>
+        <td></td>
+        <td>Nema leka</td>
+    </tr>
+    
+    </tbody>
+</table>
+
+<div class="back-button">
+    <form action="javascript:history.back()" method="post">
+        <button type="submit">Back</button>
+    </form>
+</div>
+</body>
+</html>
+2024-09-02 22:29:26,992 INFO 127.0.0.1 - - [02/Sep/2024 22:29:26] "GET /search_patient?patient_id=0001 HTTP/1.1" 200 -
+2024-09-02 22:30:58,049 INFO  * Detected change in '/Users/dimimac/distributed_medical_app/blockchain/blockchain.py', reloading
+2024-09-02 22:30:58,071 INFO  * Restarting with stat
+2024-09-02 22:30:58,256 WARNING  * Debugger is active!
+2024-09-02 22:30:58,271 INFO  * Debugger PIN: 485-096-234
+2024-09-02 22:31:06,623 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5080
+ * Running on http://192.168.0.30:5080
+2024-09-02 22:31:06,623 INFO [33mPress CTRL+C to quit[0m
+2024-09-02 22:31:06,624 INFO  * Restarting with stat
+2024-09-02 22:31:06,731 WARNING  * Debugger is active!
+2024-09-02 22:31:06,738 INFO  * Debugger PIN: 485-096-234
+2024-09-02 22:31:09,759 INFO Request: GET http://localhost:5080/ b''
+2024-09-02 22:31:09,766 INFO Response: 200 OK <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Add Patient Data</title>
+</head>
+<body>
+<div class="container">
+    <h1>Add Patient Data</h1>
+    <form action="/add_patient_data" method="post">
+        <label for="patient_id">Patient ID:</label>
+        <input type="text" id="patient_id" name="patient_id" required>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="diagnosis">Diagnosis:</label>
+        <input type="text" id="diagnosis" name="diagnosis" required>
+
+        <label for="treatment">Treatment:</label>
+        <input type="text" id="treatment" name="treatment" required>
+
+        <button type="submit">Submit</button>
+    </form>
+    <form action="/search_patient" method="get">
+        <label for="patient_id">Enter Patient ID:</label>
+        <input type="text" id="patient_id" name="patient_id" required>
+        <button type="submit">Search</button>
+    </form>
+    <a href="/get_chain">View All Patient Data</a>
+    <form action="javascript:history.back()" method="post">
+    <button type="submit">Back</button>
+</form>
+</div>
+</body>
+</html>
+2024-09-02 22:31:09,766 INFO 127.0.0.1 - - [02/Sep/2024 22:31:09] "GET / HTTP/1.1" 200 -
+2024-09-02 22:31:09,789 INFO 127.0.0.1 - - [02/Sep/2024 22:31:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-09-02 22:31:17,102 INFO Request: POST http://localhost:5080/add_patient_data b''
+2024-09-02 22:31:17,103 INFO Response: 200 OK {
+  "message": "Data added to blockchain"
+}
+
+2024-09-02 22:31:17,103 INFO 127.0.0.1 - - [02/Sep/2024 22:31:17] "POST /add_patient_data HTTP/1.1" 200 -
+2024-09-02 22:31:20,178 INFO Request: GET http://localhost:5080/get_chain b''
+2024-09-02 22:31:20,184 INFO Response: 200 OK <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Chain</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        button {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            background-color: #007bff;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        form {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<h1>Blockchain Chain</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Index</th>
+        <th>Previous Hash</th>
+        <th>Timestamp</th>
+        <th>Data</th>
+        <th>Hash</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+    <tr>
+        <td>1</td>
+        <td>d60f0800e2e09bae899cf8519a31b454969cae8738dbe464ee3cf655f1852e05</td>
+        <td>1725309077.102908</td>
+        <td>{&#39;patient_id&#39;: &#39;0001&#39;, &#39;name&#39;: &#39;Dimitrije&#39;, &#39;diagnosis&#39;: &#39;Debil&#39;, &#39;treatment&#39;: &#39;Nema leka&#39;}</td>
+        <td>4618f839d79411710ced0357b2a23733f7ae8081c682553ac9cff3e1c775c668</td>
+        <td>
+            <form action="/delete_block/1" method="post">
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+    
+    </tbody>
+</table>
+<form action="javascript:history.back()" method="post">
+    <button type="submit">Back</button>
+</form>
+</body>
+</html>
+2024-09-02 22:31:20,184 INFO 127.0.0.1 - - [02/Sep/2024 22:31:20] "GET /get_chain HTTP/1.1" 200 -
+2024-09-02 22:31:27,823 INFO Request: GET http://localhost:5080/search_patient?patient_id=0001 b''
+2024-09-02 22:31:27,828 INFO Response: 200 OK <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        button {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            background-color: #007bff;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .back-button {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>Patient Data</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Patient ID</th>
+        <th>Name</th>
+        <th>Disease</th>
+        <th>Treatment</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+    <tr>
+        <td>0001</td>
+        <td>Dimitrije</td>
+        <td>Debil</td>
+        <td>Nema leka</td>
+    </tr>
+    
+    </tbody>
+</table>
+
+<div class="back-button">
+    <form action="javascript:history.back()" method="post">
+        <button type="submit">Back</button>
+    </form>
+</div>
+</body>
+</html>
+2024-09-02 22:31:27,828 INFO 127.0.0.1 - - [02/Sep/2024 22:31:27] "GET /search_patient?patient_id=0001 HTTP/1.1" 200 -
+2024-09-02 22:31:38,085 INFO Request: GET http://localhost:5080/search_patient?patient_id=0001 b''
+2024-09-02 22:31:38,086 INFO Response: 200 OK <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        button {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            background-color: #007bff;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .back-button {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>Patient Data</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Patient ID</th>
+        <th>Name</th>
+        <th>Disease</th>
+        <th>Treatment</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+    <tr>
+        <td>0001</td>
+        <td>Dimitrije</td>
+        <td>Debil</td>
+        <td>Nema leka</td>
+    </tr>
+    
+    </tbody>
+</table>
+
+<div class="back-button">
+    <form action="javascript:history.back()" method="post">
+        <button type="submit">Back</button>
+    </form>
+</div>
+</body>
+</html>
+2024-09-02 22:31:38,087 INFO 127.0.0.1 - - [02/Sep/2024 22:31:38] "GET /search_patient?patient_id=0001 HTTP/1.1" 200 -
+2024-09-02 22:34:07,146 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5080
+ * Running on http://192.168.0.30:5080
+2024-09-02 22:34:07,147 INFO [33mPress CTRL+C to quit[0m
+2024-09-02 22:34:07,147 INFO  * Restarting with stat
+2024-09-02 22:34:07,250 WARNING  * Debugger is active!
+2024-09-02 22:34:07,258 INFO  * Debugger PIN: 485-096-234
+2024-09-02 22:34:10,163 INFO Request: GET http://localhost:5080/ b''
+2024-09-02 22:34:10,169 INFO Response: 200 OK <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Add Patient Data</title>
+</head>
+<body>
+<div class="container">
+    <h1>Add Patient Data</h1>
+    <form action="/add_patient_data" method="post">
+        <label for="patient_id">Patient ID:</label>
+        <input type="text" id="patient_id" name="patient_id" required>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="diagnosis">Diagnosis:</label>
+        <input type="text" id="diagnosis" name="diagnosis" required>
+
+        <label for="treatment">Treatment:</label>
+        <input type="text" id="treatment" name="treatment" required>
+
+        <button type="submit">Submit</button>
+    </form>
+    <form action="/search_patient" method="get">
+        <label for="patient_id">Enter Patient ID:</label>
+        <input type="text" id="patient_id" name="patient_id" required>
+        <button type="submit">Search</button>
+    </form>
+    <a href="/get_chain">View All Patient Data</a>
+    <form action="javascript:history.back()" method="post">
+    <button type="submit">Back</button>
+</form>
+</div>
+</body>
+</html>
+2024-09-02 22:34:10,170 INFO 127.0.0.1 - - [02/Sep/2024 22:34:10] "GET / HTTP/1.1" 200 -
+2024-09-02 22:34:10,192 INFO 127.0.0.1 - - [02/Sep/2024 22:34:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2024-09-02 22:34:10,878 INFO Request: GET http://localhost:5080/ b''
+2024-09-02 22:34:10,878 INFO Response: 200 OK <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Add Patient Data</title>
+</head>
+<body>
+<div class="container">
+    <h1>Add Patient Data</h1>
+    <form action="/add_patient_data" method="post">
+        <label for="patient_id">Patient ID:</label>
+        <input type="text" id="patient_id" name="patient_id" required>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="diagnosis">Diagnosis:</label>
+        <input type="text" id="diagnosis" name="diagnosis" required>
+
+        <label for="treatment">Treatment:</label>
+        <input type="text" id="treatment" name="treatment" required>
+
+        <button type="submit">Submit</button>
+    </form>
+    <form action="/search_patient" method="get">
+        <label for="patient_id">Enter Patient ID:</label>
+        <input type="text" id="patient_id" name="patient_id" required>
+        <button type="submit">Search</button>
+    </form>
+    <a href="/get_chain">View All Patient Data</a>
+    <form action="javascript:history.back()" method="post">
+    <button type="submit">Back</button>
+</form>
+</div>
+</body>
+</html>
+2024-09-02 22:34:10,879 INFO 127.0.0.1 - - [02/Sep/2024 22:34:10] "GET / HTTP/1.1" 200 -
+2024-09-02 22:34:10,894 INFO 127.0.0.1 - - [02/Sep/2024 22:34:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -

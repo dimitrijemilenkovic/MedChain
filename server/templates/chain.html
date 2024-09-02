@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Chain</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        button {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            background-color: #007bff;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        form {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<h1>Blockchain Chain</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Index</th>
+        <th>Previous Hash</th>
+        <th>Timestamp</th>
+        <th>Data</th>
+        <th>Hash</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for block in chain_data %}
+    <tr>
+        <td>{{ block.index }}</td>
+        <td>{{ block.previous_hash }}</td>
+        <td>{{ block.timestamp }}</td>
+        <td>{{ block.data }}</td>
+        <td>{{ block.hash }}</td>
+        <td>
+            <form action="/delete_block/{{ block.index }}" method="post">
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<form action="javascript:history.back()" method="post">
+    <button type="submit">Back</button>
+</form>
+</body>
+</html>
